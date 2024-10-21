@@ -6,7 +6,6 @@ class functions_that_add_or_subtract_a_small_amount
         double da = 1.0e-10;
         double da2 = 1.0e-300;
         double m = 100;
-        double n = Math.Sqrt(1.0 / da);
         double x = 10.0;//A threshold exists depending on the function.
         double sum = 0.0;//Function sum
         int h = 0;
@@ -19,7 +18,6 @@ class functions_that_add_or_subtract_a_small_amount
             }
             if (double.IsInfinity(Function(x + h * da)))
             {
-                sum += Function(da2);
                 break;
             }
             sum += Function(x + h * da);
