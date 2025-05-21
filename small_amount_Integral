@@ -17,7 +17,7 @@ class starting_point
         }
 
         x2 = m*da/2.0;
-        Console.WriteLine("{0} {1} {2}\n",sum, (m+1) * Function(x+x2)*da,Integral(x+(m+1)*da)-Integral(x));
+        Console.WriteLine("{0} {1} {2}\n",sum, (m+1) * Function(x+x2)*da,Integral(x+(m+1)*da*Complex.ImaginaryOne).Imaginary);
 
     }
     private Complex Integral(Complex x)
