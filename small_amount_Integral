@@ -5,20 +5,20 @@ class starting_point
     public starting_point()
     {
         
-        Complex da = Complex.Pow(2.0,-30);
-        Complex m = Complex.Pow(2.0, 15);
-        Complex x = 27.5;//A threshold exists depending on the function.
+        Complex da = Complex.Pow(2.0,-30); //fixed
+        Complex m = Complex.Pow(2.0, 15);  //fixed
+        Complex x = 10.0;//A threshold exists depending on the function.
         Complex x2;
         Complex sum = 0.0;//Fuanction sum
         int h = 0;
-
+        Complex t = 1.00000115203; //1.00000115203 is about.It seems to be a variable
         for (h = 0; h <= m.Real; h++)
         {
             sum += (Function(x + (h + 1.0) * da ) + Function(x + h * da )) * da / 2.0;
         }
 
-        x2 = (m+1.0889) * da/2.0;//1.0889 is about.May be it's Constant
-        Console.WriteLine("{0}\n{1}\n{2}\n",sum, (m+1.0) * Function(x+x2)*da,Integral(x+(m+1.0)*da)-Integral(x));
+        x2 = (m+t) * da/2.0;//1.0889 is about
+        Console.WriteLine("{0}\n{1}\n{2}\n",sum, (m+t) * Function(x+x2)*da,Integral(x+(m+1.0)*da)-Integral(x));
 
     }
     private Complex Integral(Complex x)
