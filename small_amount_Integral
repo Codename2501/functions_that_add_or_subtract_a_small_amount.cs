@@ -5,13 +5,14 @@ class starting_point
     public starting_point()
     {
         
-        Complex da = Complex.Pow(2.0,-30); //fixed
-        Complex m = Complex.Pow(2.0, 15);  //fixed
+        Complex da = Complex.Pow(2.0,-30); //flexible
+        Complex m = Complex.Pow(2.0, 15);  //flexible
         Complex x = 10.0;//A threshold exists depending on the function.
         Complex x2;
         Complex sum = 0.0;//Fuanction sum
         int h = 0;
         Complex t = 1.00000115203; //1.00000115203 is about.It seems to be a variable
+                                    //It looks like there are some variables
         for (h = 0; h <= m.Real; h++)
         {
             sum += (Function(x + (h + 1.0) * da ) + Function(x + h * da )) * da / 2.0;
