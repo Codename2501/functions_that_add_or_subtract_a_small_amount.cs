@@ -17,7 +17,7 @@ class starting_point
             sum += (Function(x + (h + 1.0) * da) + Function(x + h * da)) * da / 2.0;
         }
 
-        x2 = (m + 1.0) * da / 2.0;//Some variables are needed
+        x2 = (m + 1.0) * da / 2.0;//Some variables are needed.Somehow, this is different
         Console.WriteLine("{0}\n{1}\n{2}\n", sum, (m+1.0)*Function(x+x2)*da, Integral(x + (m + 1.0) * da) - Integral(x));
 
     }
