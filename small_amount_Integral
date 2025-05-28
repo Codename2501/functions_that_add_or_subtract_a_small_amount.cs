@@ -1,4 +1,5 @@
 //Integrating ,For Exp(x)
+//Another form of the definite integral
 using System.Numerics;
 
 class starting_point
