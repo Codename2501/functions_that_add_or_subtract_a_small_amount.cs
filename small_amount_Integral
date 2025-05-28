@@ -1,5 +1,4 @@
 //Integrating ,For Exp(x)
-//Another form of the definite integral
 using System.Numerics;
 
 class starting_point
@@ -8,8 +7,10 @@ class starting_point
     {
         double x = 0.0;//A threshold exists depending on the function.
         double x2 = 1.0;//not 0;
-        double t= (Math.Log((Math.Exp(x2) - 1.0) * Math.Exp(x) / x2) - x)/ x2;//Coefficient for exp
-        Console.WriteLine("{0}\n{1}\n", x2 * Function(x+x2*t), Integral(x+x2) - Integral(x));
+        double inte = Integral(x + x2) - Integral(x);
+        double t= (Math.Log(inte / x2) - x)/ x2;//Coefficient for exp
+        //x2*Function(x+s*t)=Integral(x+x2)-Integral(x)
+        Console.WriteLine("{0}\n{1}\n{2}\n",t, x2 * Function(x+x2*t), inte);
     }
     private double Integral(double x)
     {
@@ -18,6 +19,10 @@ class starting_point
     private double Function(double x)
     {
         //Any elementary function is generally acceptable in any form.
+        return Math.Exp(x);
+    }
+    private double Diff(double x)
+    {
         return Math.Exp(x);
     }
     [STAThread]
