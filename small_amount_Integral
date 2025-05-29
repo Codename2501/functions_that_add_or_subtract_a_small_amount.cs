@@ -9,10 +9,10 @@ class starting_point
         double x = 2.0;//A threshold exists depending on the function.
         double x2 =  Math.Pow(2.0,-20.0);//not 0;
         //Integral2(x+x2*Complex.ImaninaryOne).Imaginary/x2=Function(x)
-        double inte2 = Integral2(x + x2 * Complex.ImaginaryOne).Imaginary / x2; //differential
+        double fx = Integral2(x + x2 * Complex.ImaginaryOne).Imaginary / x2; //differential
         double t = (Math.Asin(Function(x)) - x);
         //x2*Function(x+t)=Integral(x+x2*Complex.ImaginaryOne-Integral2(x)).Imaginary
-        Console.WriteLine("{0}\n{1}\nIntegrating Small Amounts: {2}\ndefinite integral:         {3}", inte2,Function(x), x2 * Function(x+t), (Integral2(x+x2*Complex.ImaginaryOne)-Integral2(x)).Imaginary);
+        Console.WriteLine("{0}\n{1}\nIntegrating Small Amounts: {2}\ndefinite integral:         {3}", fx,Function(x), x2 * Function(x+t), (Integral2(x+x2*Complex.ImaginaryOne)-Integral2(x)).Imaginary);
     }
     private double Integral(double x)
     {
